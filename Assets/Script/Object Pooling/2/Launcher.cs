@@ -15,7 +15,7 @@ public class Launcher : MonoBehaviour
             CreateBall,
             OnGet,
             OnRelease,
-            OnDestroy,
+            /*OnDestroy,*/
             maxSize: 3);
     }
 
@@ -37,10 +37,10 @@ public class Launcher : MonoBehaviour
         ball.gameObject.SetActive(false);
     }
 
-    private void OnDestroy(Ball ball)
+    /*private void OnDestroy(Ball ball)
     {
         ball.gameObject.SetActive(false);
-    }
+    }*/
 
     private void Update()
     {
