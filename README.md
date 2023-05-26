@@ -1,2 +1,3 @@
 # Unity_Study
- Unity Technology Study
+
+유니티 엔진을 다루면서 콘텐츠에 필요한 기능들을 구현하기 위하여 작업하는 테스트 공간입니다.
