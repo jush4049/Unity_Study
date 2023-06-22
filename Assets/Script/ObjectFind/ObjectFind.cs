@@ -13,8 +13,6 @@ public class ObjectFind : MonoBehaviour
     {
         FoundObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag(TagName)); // 해당 태그인 오브젝트들을 나열
         shortDis = Vector3.Distance(gameObject.transform.position, FoundObjects[0].transform.position); // 첫 번째를 기준으로 잡기
-
-        enemy = FoundObjects[0]; // 첫 번째 먼저
     }
 
     void Update()
