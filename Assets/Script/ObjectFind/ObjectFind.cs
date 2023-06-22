@@ -4,44 +4,31 @@ using UnityEngine;
 
 public class ObjectFind : MonoBehaviour
 {
-    public List<GameObject> FoundObjects; // Ã£À» ¿ÀºêÁ§Æ® ¸®½ºÆ®
+    public List<GameObject> FoundObjects; // ì°¾ì„ ì˜¤ë¸Œì íŠ¸ ë¦¬ìŠ¤íŠ¸
     public GameObject enemy;
     public string TagName;
-    public float shortDis; // °¡Àå ÂªÀº °Å¸®
+    public float shortDis; // ê°€ì¥ ì§§ì€ ê±°ë¦¬
 
     void Start()
     {
-        FoundObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag(TagName)); // ÇØ´ç ÅÂ±×ÀÎ ¿ÀºêÁ§Æ®µéÀ» ³ª¿­
-        shortDis = Vector3.Distance(gameObject.transform.position, FoundObjects[0].transform.position); // Ã¹ ¹øÂ°¸¦ ±âÁØÀ¸·Î Àâ±â
+        FoundObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag(TagName)); // í•´ë‹¹ íƒœê·¸ì¸ ì˜¤ë¸Œì íŠ¸ë“¤ì„ ë‚˜ì—´
+        shortDis = Vector3.Distance(gameObject.transform.position, FoundObjects[0].transform.position); // ì²« ë²ˆì§¸ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì¡ê¸°
 
-        enemy = FoundObjects[0]; // Ã¹ ¹øÂ° ¸ÕÀú
-
-        /*foreach (GameObject found in FoundObjects) // ¸ğµç ¿ÀºêÁ§Æ® °Å¸® ÃøÁ¤
-        {
-            // Vector3.Distance(Vector3 a, Vector3 b), a¿Í b»çÀÌÀÇ °Å¸®¸¦ ÃøÁ¤ÇÏ°í ¹İÈ¯ÇÏ´Â ÇÔ¼ö
-            float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
-
-            if (Distance < shortDis) // À§¿¡¼­ ÀâÀº ±âÁØÀ¸·Î °Å¸® ÃøÁ¤
-            {
-                enemy = found;
-                shortDis = Distance;
-            }
-        }
-        Debug.Log(enemy.name);*/
+        enemy = FoundObjects[0]; // ì²« ë²ˆì§¸ ë¨¼ì €
     }
 
     void Update()
     {
-        shortDis = Vector3.Distance(gameObject.transform.position, FoundObjects[0].transform.position); // Ã¹ ¹øÂ°¸¦ ±âÁØÀ¸·Î Àâ±â
+        shortDis = Vector3.Distance(gameObject.transform.position, FoundObjects[0].transform.position); // ì²« ë²ˆì§¸ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì¡ê¸°
 
-        enemy = FoundObjects[0]; // Ã¹ ¹øÂ° ¸ÕÀú
+        enemy = FoundObjects[0]; // ì²« ë²ˆì§¸ ë¨¼ì €
 
-        foreach (GameObject found in FoundObjects) // ¸ğµç ¿ÀºêÁ§Æ® °Å¸® ÃøÁ¤
+        foreach (GameObject found in FoundObjects) // ëª¨ë“  ì˜¤ë¸Œì íŠ¸ ê±°ë¦¬ ì¸¡ì •
         {
-            // Vector3.Distance(Vector3 a, Vector3 b), a¿Í b»çÀÌÀÇ °Å¸®¸¦ ÃøÁ¤ÇÏ°í ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+            // Vector3.Distance(Vector3 a, Vector3 b), aì™€ bì‚¬ì´ì˜ ê±°ë¦¬ë¥¼ ì¸¡ì •í•˜ê³  ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
             float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
 
-            if (Distance < shortDis) // À§¿¡¼­ ÀâÀº ±âÁØÀ¸·Î °Å¸® ÃøÁ¤
+            if (Distance < shortDis) // ìœ„ì—ì„œ ì¡ì€ ê¸°ì¤€ìœ¼ë¡œ ê±°ë¦¬ ì¸¡ì •
             {
                 enemy = found;
                 shortDis = Distance;
